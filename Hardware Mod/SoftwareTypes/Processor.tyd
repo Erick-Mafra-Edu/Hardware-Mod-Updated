@@ -1,0 +1,355 @@
+SoftwareType
+{
+    Name "Processor"
+    Category "Hardware"
+    Description "The brain of every Comptuer"
+    Unlock 0
+    Random 0.3
+    Popularity 1
+    OSSpecific FALSE
+    OneClient FALSE
+    InHouse TRUE
+    NameGenerator "names"
+
+    Categories
+    [
+        {
+            Name "Default"
+            Description ""
+            Unlock 0
+            Popularity 1
+            TimeScale 1.15
+            Retention 0.7
+            Iterative 0.9
+            NameGenerator "names"
+        }
+    ]
+    Features
+    [
+        {
+            Name "Math Unit"
+            Forced TRUE
+            Category "Physical"
+            Description "The Main Brain. Does things like finding \"X\" from \"X=42^(1-4+9)\"..."
+            Unlock 0
+            DevTime 6
+            Innovation 1
+            Usability 1
+            Stability 1
+            CodeArt 1
+        }
+        {
+            Name "Divider"
+            From "Math Unit"
+            Category "System"
+            Description "Division without the thinking"
+            Unlock 1980
+            DevTime 12
+            Innovation 4
+            Usability 2
+            Stability 0
+            CodeArt 1
+        }
+        {
+            Name "APU"
+            From "Math Unit"
+            Vital TRUE
+            Category "System"
+            Description ""
+            Unlock 1990
+            DevTime 24
+            Innovation 8
+            Usability 8
+            Stability 2
+            CodeArt 0.4
+        }
+        {
+            Name "Parallel Math"
+            Vital TRUE
+            Category "System"
+            Description "What if you could do two things at once?"
+            Unlock 1990
+            DevTime 9
+            Innovation 6
+            Usability 4
+            Stability 2
+            CodeArt 1
+            Dependency { Software "Processor" Feature "Math Unit" }
+        }
+        {
+            Name "Control Unit"
+            Forced TRUE
+            Category "Physical"
+            Description ""
+            Unlock 0
+            DevTime 3
+            Innovation 1
+            Usability 1
+            Stability 1
+            CodeArt 1
+        }
+        {
+            Name "Dual Core"
+            From "Control Unit"
+            Vital TRUE
+            Category "System"
+            Description ""
+            Unlock 2006
+            DevTime 6
+            Innovation 6
+            Usability 6
+            Stability 2
+            CodeArt 0.5
+        }
+        {
+            Name "Quad Core"
+            From "Dual Core"
+            Vital TRUE
+            Category "System"
+            Description ""
+            Unlock 2007
+            DevTime 9
+            Innovation 10
+            Usability 10
+            Stability 5
+            CodeArt 0.3
+        }
+        {
+            Name "Octo Core"
+            From "Quad Core"
+            Vital TRUE
+            Category "System"
+            Description ""
+            Unlock 2011
+            DevTime 15
+            Innovation 12
+            Usability 15
+            Stability 9
+            CodeArt 0.3
+        }
+        {
+            Name "Heat Spreaders"
+            Vital TRUE
+            Category "Physical"
+            Description "If you dont know why are these important, search \"CPU cooking\" on youtube"
+            Unlock 1980
+            DevTime 3
+            Innovation 1
+            Usability 1
+            Stability 3
+            CodeArt 0.8
+        }
+        {
+            Name "Heat Pipes"
+            From "Heat Spreaders"
+            Vital TRUE
+            Category "Physical"
+            Description ""
+            Unlock 1985
+            DevTime 6
+            Innovation 3
+            Usability 2
+            Stability 6
+            CodeArt 0.4
+        }
+        {
+            Name "Heat Fins"
+            From "Heat Pipes"
+            Forced FALSE
+            Category "Physical"
+            Description ""
+            Unlock 1995
+            DevTime 9
+            Innovation 6
+            Usability 2
+            Stability 8
+            CodeArt 0.1
+        }
+        {
+            Name "Thermal Paste"
+            Forced FALSE
+            Vital TRUE
+            Category "Physical"
+            Description "Help to transfer heat from CPU to other stuff"
+            Unlock 1970
+            DevTime 2
+            Innovation 1
+            Usability 1
+            Stability 2
+            CodeArt 0.8
+        }
+        {
+            Name "Substrate"
+            From "Thermal Paste"
+            Vital TRUE
+            Category "Physical"
+            Description ""
+            Unlock 1980
+            DevTime 6
+            Innovation 4
+            Usability 1
+            Stability 6
+            CodeArt 0.2
+        }
+        {
+            Name "Arctic Paste"
+            From "Substrate"
+            Vital TRUE
+            Category "Physical"
+            Description ""
+            Unlock 1990
+            DevTime 9
+            Innovation 8
+            Usability 2
+            Stability 8
+            CodeArt 0.6
+        }
+        {
+            Name "Logic Unit"
+            Forced TRUE
+            Category "System"
+            Description "The Other Main Brain. Does things like comparing two numbers"
+            Unlock 0
+            DevTime 6
+            Innovation 1
+            Usability 1
+            Stability 1
+            CodeArt 1
+        }
+        {
+            Name "Predicter"
+            Category "System"
+            Description "Can be used to improve logic"
+            Unlock 1983
+            DevTime 6
+            Innovation 2
+            Usability 2
+            Stability 1
+            CodeArt 1
+            Dependency { Software "Processor" Feature "Logic Unit" }
+        }
+        {
+            Name "Fetcher"
+            Category "System"
+            Description "Orders instructions better"
+            Unlock 1985
+            DevTime 6
+            Innovation 4
+            Usability 3
+            Stability 1
+            CodeArt 1
+            Dependency { Software "Processor" Feature "Predicter" }
+        }
+        {
+            Name "Registers"
+            Forced TRUE
+            Category "Physical"
+            Description "Short Storage"
+            Unlock 0
+            DevTime 6
+            Innovation 1
+            Usability 1
+            Stability 1
+            CodeArt 1
+        }
+        {
+            Name "Cache"
+            Vital TRUE
+            Category "Physical"
+            Description "As processor clock speeds continue to increase, the memory access time has been lagging behind.  Caches were added to allow the processor to make less round trips to the memory."
+            Unlock 1985
+            DevTime 9
+            Innovation 4
+            Usability 6
+            Stability 2
+            CodeArt 1
+            Dependency { Software "Processor" Feature "Registers" }
+        }
+        {
+            Name "2nd Level"
+            Vital TRUE
+            Category "Physical"
+            Description "A second level of cache that uses a Most Frequently Used list to keep note of things that important, where the first level is changed to a First In First Out register."
+            Unlock 1990
+            DevTime 15
+            Innovation 10
+            Usability 10
+            Stability 4
+            CodeArt 0.7
+            Dependency { Software "Processor" Feature "Cache" }
+        }
+        {
+            Name "3rd Level"
+            Vital TRUE
+            Category "Physical"
+            Description "A third level of cache simply maintanis a lookup table between the 2nd Level of cache, and the physical address space.  This decreases access time and round trip time.."
+            Unlock 1995
+            DevTime 15
+            Innovation 10
+            Usability 10
+            Stability 4
+            CodeArt 0.7
+            Dependency { Software "Processor" Feature "2nd Level" }
+        }
+        {
+            Name "On-Chip Memory"
+            From "3rd Level"
+            Vital TRUE
+            Category "Physical"
+            Description "Integrates the 3rd level cache directly onto the chip, reducing the access time dramatically,"
+            Unlock 2000
+            DevTime 24
+            Innovation 15
+            Usability 20
+            Stability 8
+            CodeArt 0.7
+        }
+        {
+            Name "Power Efficiency"
+            Category "Physical"
+            Description "Use less power! Save the planet!"
+            Unlock 1995
+            DevTime 9
+            Innovation 1
+            Usability 2
+            Stability 2
+            CodeArt 0.6
+        }
+        {
+            Name "25%"
+            From "Power Efficiency"
+            Category "Physical"
+            Description "One giant leap in... making things smaller?  Using smaller and smaller components has net a considerable power and efficiency increase."
+            Unlock 1998
+            DevTime 6
+            Innovation 1
+            Usability 3
+            Stability 3
+            CodeArt 0.4
+        }
+        {
+            Name "35%"
+            From "Power Efficiency"
+            Category "Physical"
+            Description "Yes, it really did take you four years to figure out how to save even ten percent more power on the chips themselves, you didn't want to sacrifice performance."
+            Unlock 2002
+            DevTime 9
+            Innovation 3
+            Usability 5
+            Stability 5
+            CodeArt 0.4
+        }
+        {
+            Name "42%"
+            From "Power Efficiency"
+            Category "Physical"
+            Description "A crazy scientist named \"Bob\" in the depths of your Research and Development dept. thinks he's solved the universe itself... or at least 7% more power savings."
+            Unlock 2007
+            DevTime 6
+            Innovation 5
+            Usability 8
+            Stability 8
+            CodeArt 0.1
+        }
+    ]
+}

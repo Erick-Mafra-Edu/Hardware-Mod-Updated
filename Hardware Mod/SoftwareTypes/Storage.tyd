@@ -1,0 +1,272 @@
+SoftwareType
+{
+    Name "Storage"
+    Category "Hardware"
+    Description "Computers sometimes need to store their data, and by sometimes I mean they always do."
+    Unlock 0
+    Random 0.3
+    Popularity 0.9
+    OSSpecific FALSE
+    OneClient FALSE
+    InHouse TRUE
+    NameGenerator "names"
+
+    Categories
+    [
+        {
+            Name "Hard Drive"
+            Description "The slow spinning kind"
+            Unlock 0
+            Popularity 0.9
+            TimeScale 0.5
+            Retention 0.4
+            Iterative 0.9
+            NameGenerator "names"
+        }
+    ]
+    Features
+    [
+        {
+            Name "Error Detection"
+            Vital TRUE
+            Category "System"
+            Description "Attempts to detect errors at the controller level."
+            Unlock 0
+            DevTime 9
+            Innovation 2
+            Usability 2
+            Stability 2
+            CodeArt 1
+        }
+        {
+            Name "Error Prediction"
+            From "Error Detection"
+            Vital TRUE
+            Category "System"
+            Description "Attempts to predict when a drive will fail, saving your data in the process by warning you about an imminent failure ahead of time."
+            Unlock 1980
+            DevTime 15
+            Innovation 4
+            Usability 4
+            Stability 4
+            CodeArt 1
+        }
+        {
+            Name "Error Correction"
+            Vital TRUE
+            Category "System"
+            Description "Attempts to correct detected errors."
+            Unlock 1985
+            DevTime 15
+            Innovation 4
+            Usability 4
+            Stability 8
+            CodeArt 1
+            Dependency { Software "Storage" Feature "Error Prediction" }
+        }
+        {
+            Name "SMART Reporting"
+            From "Error Prediction"
+            Vital TRUE
+            Category "System"
+            Description "Logs errors and reports them in a meaningful way, for debuggers."
+            Unlock 1995
+            DevTime 27
+            Innovation 8
+            Usability 4
+            Stability 12
+            CodeArt 1
+        }
+        {
+            Name "Hardwired"
+            Forced TRUE
+            Category "Physical"
+            Description "Literally sold pre-installed in the computer, unreplacable"
+            Unlock 0
+            DevTime 3
+            Innovation 1
+            Usability 1
+            Stability 3
+            CodeArt 0.7
+        }
+        {
+            Name "SCSI"
+            From "Hardwired"
+            Vital TRUE
+            Category "Physical"
+            Description "Finally, replacable harddrives. We have no idea why someone was buying them before invention of this thing"
+            Unlock 1986
+            DevTime 9
+            Innovation 4
+            Usability 2
+            Stability 2
+            CodeArt 0.6
+        }
+        {
+            Name "P-ATA"
+            From "SCSI"
+            Vital TRUE
+            Category "Physical"
+            Description "A faster, less stable connection."
+            Unlock 1998
+            DevTime 12
+            Innovation 6
+            Usability 4
+            Stability 2
+            CodeArt 0.8
+        }
+        {
+            Name "S-ATA"
+            From "P-ATA"
+            Vital TRUE
+            Category "System"
+            Description "Half the price of P-ATA, and faster."
+            Unlock 2003
+            DevTime 9
+            Innovation 9
+            Usability 8
+            Stability 4
+            CodeArt 0.8
+        }
+        {
+            Name "SATA 3G"
+            Vital TRUE
+            Category "System"
+            Description "A standard for speed of SATA"
+            Unlock 2005
+            DevTime 12
+            Innovation 2
+            Usability 4
+            Stability 2
+            CodeArt 0.8
+            Dependency { Software "Storage" Feature "S-ATA" }
+        }
+        {
+            Name "SATA 6G"
+            From "SATA 3G"
+            Vital TRUE
+            Category "System"
+            Description "Twice as fast as the last standard"
+            Unlock 2008
+            DevTime 15
+            Innovation 2
+            Usability 8
+            Stability 4
+            CodeArt 0.8
+        }
+        {
+            Name "Platters"
+            Forced TRUE
+            Category "Physical"
+            Description "The things you store the data on"
+            Unlock 0
+            DevTime 15
+            Innovation 1
+            Usability 1
+            Stability 1
+            CodeArt 0.8
+        }
+        {
+            Name "5 inch Platters"
+            From "Platters"
+            Vital TRUE
+            Category "Physical"
+            Description "MUCH smaller platters than ever before"
+            Unlock 1978
+            DevTime 12
+            Innovation 2
+            Usability 4
+            Stability 1
+            CodeArt 0.8
+        }
+        {
+            Name "3 inch Platters"
+            From "5 inch Platters"
+            Vital TRUE
+            Category "Physical"
+            Description "MUCH smaller platters than ever before, now with even more \"ever\"!"
+            Unlock 1983
+            DevTime 15
+            Innovation 4
+            Usability 8
+            Stability 2
+            CodeArt 0.6
+        }
+        {
+            Name "Thermal Spacing"
+            Vital TRUE
+            Category "System"
+            Description "Cools down hard drives and reduces failure rates."
+            Unlock 2005
+            DevTime 12
+            Innovation 8
+            Usability 8
+            Stability 16
+            CodeArt 0.5
+            Dependency { Software "Storage" Feature "3 inch Platters" }
+        }
+        {
+            Name "Heads"
+            Forced TRUE
+            Category "Physical"
+            Description "The things that read/write data"
+            Unlock 0
+            DevTime 9
+            Innovation 1
+            Usability 1
+            Stability 1
+            CodeArt 0.8
+        }
+        {
+            Name "Auto-moving"
+            From "Heads"
+            Vital TRUE
+            Category "Physical"
+            Description "Heads can autoposition themselves"
+            Unlock 1973
+            DevTime 15
+            Innovation 3
+            Usability 3
+            Stability 2
+            CodeArt 0.8
+        }
+        {
+            Name "Film Heads"
+            From "Auto-moving"
+            Vital TRUE
+            Category "Physical"
+            Description "Thin Film Heads, the next step in making harddrives smaller"
+            Unlock 1979
+            DevTime 9
+            Innovation 12
+            Usability 12
+            Stability 6
+            CodeArt 0.6
+        }
+        {
+            Name "Fluid Bearings"
+            Vital TRUE
+            Category "Physical"
+            Description "Reduces noises, allows for higher RPMs"
+            Unlock 1997
+            DevTime 21
+            Innovation 4
+            Usability 4
+            Stability 8
+            CodeArt 0.8
+        }
+        {
+            Name "PMR"
+            Vital TRUE
+            Category "Physical"
+            Description "Records perpendicular instead of logarithmic, allowing more data to be stored"
+            Unlock 2005
+            DevTime 21
+            Innovation 16
+            Usability 16
+            Stability 8
+            CodeArt 0.5
+            Dependency { Software "Storage" Feature "Fluid Bearings" }
+        }
+    ]
+}

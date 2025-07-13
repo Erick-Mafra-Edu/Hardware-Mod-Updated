@@ -1,0 +1,790 @@
+SoftwareType
+{
+    Name "Graphics Card"
+    Category "Hardware"
+    Description "Create your own PCI Graphics Card"
+    Unlock 1992
+    Random 0.25
+    Popularity 0.5
+    OSSpecific FALSE
+    OneClient FALSE
+    InHouse TRUE
+    NameGenerator "names"
+
+    Categories
+    [
+        {
+            Name "Default"
+            Description "Still needs some balancing (v0.8+)"
+            Unlock 1992
+            Popularity 0.7
+            TimeScale 1.4
+            Retention 0.6
+            Iterative 0.9
+            NameGenerator "names"
+        }
+    ]
+    Features
+    [
+        {
+            Name "GPU"
+            Forced TRUE
+            Category "Physical"
+            Description "The Graphical Processing Unit(s), also known as Cores."
+            Unlock 1992
+            DevTime 9
+            Innovation 20
+            Usability 20
+            Stability 10
+            CodeArt 1
+        }
+        {
+            Name "GPU Boost"
+            Vital TRUE
+            Category "Physical"
+            Description "GPU Boost is a new feature which is roughly analogous to turbo boosting of a CPU."
+            Unlock 2012
+            DevTime 4
+            Innovation 10
+            Usability 10
+            Stability 5
+            CodeArt 1
+            Dependency { Software "Graphics Card" Feature "GPU" }
+        }
+        {
+            Name "GPU Boost 2.0"
+            From "GPU Boost"
+            Vital TRUE
+            Category "Physical"
+            Description "GPU Boost 2.0 allow the GPU clock speed to increase indefinitely until a user-set temperature limit was reached without passing a user-specified maximum fan speed."
+            Unlock 2013
+            DevTime 5
+            Innovation 15
+            Usability 15
+            Stability 10
+            CodeArt 1
+        }
+        {
+            Name "Video BIOS"
+            Forced TRUE
+            Category "System"
+            Description ""
+            Unlock 1992
+            DevTime 1
+            Innovation 0
+            Usability 5
+            Stability 3
+            CodeArt 1
+        }
+        {
+            Name "Dual BIOS"
+            From "Video BIOS"
+            Vital FALSE
+            Category "System"
+            Description ""
+            Unlock 2007
+            DevTime 1
+            Innovation 0
+            Usability 10
+            Stability 5
+            CodeArt 1
+        }
+        {
+            Name "VRAM (Video RAM)"
+            Forced TRUE
+            Category "Physical"
+            Description ""
+            Unlock 1992
+            DevTime 6
+            Innovation 0
+            Usability 5
+            Stability 0
+            CodeArt 1
+        }
+        {
+            Name "SDRAM"
+            From "VRAM (Video RAM)"
+            Vital TRUE
+            Category "Physical"
+            Description ""
+            Unlock 1993
+            DevTime 6
+            Innovation 5
+            Usability 5
+            Stability 0
+            CodeArt 1
+        }
+        {
+            Name "DDR"
+            From "SDRAM"
+            Vital TRUE
+            Category "Physical"
+            Description ""
+            Unlock 2000
+            DevTime 6
+            Innovation 8
+            Usability 5
+            Stability 0
+            CodeArt 1
+        }
+        {
+            Name "DDR2"
+            From "DDR"
+            Vital FALSE
+            Category "System"
+            Description ""
+            Unlock 2003
+            DevTime 6
+            Innovation 10
+            Usability 0
+            Stability 0
+            CodeArt 1
+        }
+        {
+            Name "GDDR3"
+            From "DDR2"
+            Forced FALSE
+            Vital TRUE
+            Category "Physical"
+            Description ""
+            Unlock 2004
+            DevTime 12
+            Innovation 20
+            Usability 0
+            Stability 0
+            CodeArt 1
+        }
+        {
+            Name "GDDR5"
+            From "GDDR3"
+            Forced FALSE
+            Vital TRUE
+            Category "System"
+            Description ""
+            Unlock 2008
+            DevTime 24
+            Innovation 40
+            Usability 0
+            Stability 10
+            CodeArt 1
+        }
+        {
+            Name "HBM1"
+            From "GDDR5"
+            Forced FALSE
+            Vital TRUE
+            Category "Physical"
+            Description ""
+            Unlock 2013
+            DevTime 32
+            Innovation 60
+            Usability 15
+            Stability 15
+            CodeArt 1
+        }
+        {
+            Name "HBM2"
+            From "HBM1"
+            Forced FALSE
+            Vital TRUE
+            Category "System"
+            Description ""
+            Unlock 2016
+            DevTime 40
+            Innovation 70
+            Usability 25
+            Stability 35
+            CodeArt 1
+        }
+        {
+            Name "PCI Interface"
+            Forced FALSE
+            Vital TRUE
+            Category "Physical"
+            Description "It plugs into a PCI Slot!"
+            Unlock 1992
+            DevTime 3
+            Innovation 0
+            Usability 10
+            Stability 5
+            CodeArt 1
+            Dependency { Software "Motherboard" Feature "PCI Slots" }
+        }
+        {
+            Name "AGP"
+            From "PCI Interface"
+            Forced FALSE
+            Vital TRUE
+            Category "Physical"
+            Description "A bus dedicated to graphics adapters."
+            Unlock 1997
+            DevTime 3
+            Innovation 5
+            Usability 10
+            Stability 5
+            CodeArt 1
+            Dependency { Software "Motherboard" Feature "AGP" }
+        }
+        {
+            Name "AGP x8"
+            From "AGP"
+            Forced FALSE
+            Vital TRUE
+            Category "Physical"
+            Description "A bus dedicated to graphics adapters."
+            Unlock 1997
+            DevTime 3
+            Innovation 10
+            Usability 10
+            Stability 5
+            CodeArt 1
+            Dependency { Software "Motherboard" Feature "AGP x8" }
+            Dependency { Software "Graphics Card" Feature "AGP" }
+        }
+        {
+            Name "PCI Express x16"
+            From "AGP x8"
+            Forced FALSE
+            Vital TRUE
+            Category "Physical"
+            Description "PCI Express is much faster! (40 Gbit/s)"
+            Unlock 2004
+            DevTime 3
+            Innovation 20
+            Usability 10
+            Stability 5
+            CodeArt 1
+            Dependency { Software "Motherboard" Feature "PCI Express" }
+        }
+        {
+            Name "PCI-E 2.0 x16"
+            From "PCI Express x16"
+            Forced FALSE
+            Vital TRUE
+            Category "Physical"
+            Description "PCI-E 2.0 duplicate the bandwidth from the first version (80 Gbit/s)"
+            Unlock 2007
+            DevTime 4
+            Innovation 20
+            Usability 15
+            Stability 10
+            CodeArt 1
+            Dependency { Software "Motherboard" Feature "PCI Express" }
+        }
+        {
+            Name "PCI-E 3.0 x16"
+            From "PCI-E 2.0 x16"
+            Forced FALSE
+            Vital TRUE
+            Category "Physical"
+            Description "PCI-E 3.0 upgrades the encoding scheme to 128b/130b, reducing the bandwidth overhead from 20% of PCIE 2.0 to approximately 1.54% (128 Gbit/s)"
+            Unlock 2011
+            DevTime 4
+            Innovation 30
+            Usability 20
+            Stability 15
+            CodeArt 1
+            Dependency { Software "Motherboard" Feature "PCI Express" }
+        }
+        {
+            Name "PCI-E 4.0 x16"
+            From "PCI-E 3.0 x16"
+            Forced FALSE
+            Vital TRUE
+            Category "Physical"
+            Description "PCI-E 4.0 duplicate the bandwidth from the third version (256 Gbit/s)"
+            Unlock 2017
+            DevTime 5
+            Innovation 35
+            Usability 35
+            Stability 20
+            CodeArt 1
+            Dependency { Software "Motherboard" Feature "PCI Express" }
+        }
+        {
+            Name "SLl Support"
+            Forced FALSE
+            Vital TRUE
+            Category "Physical"
+            Description "Allows people to put two or more graphics cards together."
+            Unlock 2004
+            DevTime 9
+            Innovation 40
+            Usability 40
+            Stability 0
+            CodeArt 0.8
+            Dependency { Software "Graphics Card" Feature "PCI Express x16" }
+        }
+        {
+            Name "Decoder Block"
+            Vital TRUE
+            Category "System"
+            Description ""
+            Unlock 2004
+            DevTime 1
+            Innovation 2
+            Usability 5
+            Stability 3
+            CodeArt 1
+        }
+        {
+            Name "MPEG-1/MPEG-2"
+            Vital TRUE
+            Category "System"
+            Description ""
+            Unlock 2004
+            DevTime 1
+            Innovation 2
+            Usability 5
+            Stability 3
+            CodeArt 1
+            Dependency { Software "Graphics Card" Feature "Decoder Block" }
+        }
+        {
+            Name "H.264/VC-1"
+            Vital TRUE
+            Category "System"
+            Description ""
+            Unlock 2007
+            DevTime 2
+            Innovation 3
+            Usability 6
+            Stability 4
+            CodeArt 1
+            Dependency { Software "Graphics Card" Feature "MPEG-1/MPEG-2" }
+        }
+        {
+            Name "H.264+"
+            Vital TRUE
+            Category "System"
+            Description ""
+            Unlock 2012
+            DevTime 3
+            Innovation 4
+            Usability 7
+            Stability 5
+            CodeArt 0.95
+            Dependency { Software "Graphics Card" Feature "H.264/VC-1" }
+        }
+        {
+            Name "H.265"
+            Vital TRUE
+            Category "System"
+            Description ""
+            Unlock 2015
+            DevTime 4
+            Innovation 8
+            Usability 14
+            Stability 10
+            CodeArt 0.8
+            Dependency { Software "Graphics Card" Feature "H.264+" }
+        }
+        {
+            Name "Encoder Block"
+            Vital TRUE
+            Category "System"
+            Description ""
+            Unlock 2012
+            DevTime 1
+            Innovation 2
+            Usability 5
+            Stability 3
+            CodeArt 1
+        }
+        {
+            Name "H.264 1080p60"
+            Vital TRUE
+            Category "System"
+            Description ""
+            Unlock 2012
+            DevTime 2
+            Innovation 3
+            Usability 6
+            Stability 4
+            CodeArt 1
+            Dependency { Software "Graphics Card" Feature "Encoder Block" }
+        }
+        {
+            Name "H.264/H.265 4Kp60"
+            Vital TRUE
+            Category "System"
+            Description ""
+            Unlock 2014
+            DevTime 4
+            Innovation 8
+            Usability 10
+            Stability 10
+            CodeArt 0.8
+            Dependency { Software "Graphics Card" Feature "H.264 1080p60" }
+        }
+        {
+            Name "Heatsink"
+            Forced FALSE
+            Vital TRUE
+            Category "Physical"
+            Description "Giant block of copper"
+            Unlock 1992
+            DevTime 3
+            Innovation 0
+            Usability 0
+            Stability 20
+            CodeArt 1
+        }
+        {
+            Name "Heatpipes"
+            From "Heatsink"
+            Forced FALSE
+            Vital TRUE
+            Category "Physical"
+            Description "A more intricated block of copper"
+            Unlock 2006
+            DevTime 12
+            Innovation 20
+            Usability 0
+            Stability 20
+            CodeArt 0.5
+        }
+        {
+            Name "Heat Fins"
+            From "Heatpipes"
+            Forced FALSE
+            Vital TRUE
+            Category "Physical"
+            Description "A sophisticated intricated for your block of copper"
+            Unlock 2010
+            DevTime 24
+            Innovation 20
+            Usability 0
+            Stability 20
+            CodeArt 0.2
+        }
+        {
+            Name "Fans"
+            Forced FALSE
+            Vital FALSE
+            Category "Physical"
+            Description "More intelligent cooling for your egg pan."
+            Unlock 1993
+            DevTime 6
+            Innovation 0
+            Usability 10
+            Stability 40
+            CodeArt 1
+            Dependency { Software "Graphics Card" Feature "Heatsink" }
+        }
+        {
+            Name "Water Cooling"
+            From "Fans"
+            Forced FALSE
+            Vital FALSE
+            Category "Physical"
+            Description "Pass your water cooling into your graphics card."
+            Unlock 1996
+            DevTime 12
+            Innovation 20
+            Usability 0
+            Stability 40
+            CodeArt 1
+        }
+        {
+            Name "Nitrogen"
+            From "Water Cooling"
+            Forced FALSE
+            Vital FALSE
+            Category "Physical"
+            Description "Don't freeze."
+            Unlock 2016
+            DevTime 24
+            Innovation 40
+            Usability 0
+            Stability 10
+            CodeArt 1
+        }
+        {
+            Name "API's Support"
+            Forced TRUE
+            Vital TRUE
+            Category "System"
+            Description ""
+            Unlock 1992
+            DevTime 1
+            Innovation 1
+            Usability 5
+            Stability 1
+            CodeArt 1
+        }
+        {
+            Name "DirectX Early Version"
+            Vital TRUE
+            Category "System"
+            Description "Execute Buffer, Multitexture, etc."
+            Unlock 1995
+            DevTime 1
+            Innovation 3
+            Usability 5
+            Stability 1
+            CodeArt 1
+            Dependency { Software "Graphics Card" Feature "API's Support" }
+        }
+        {
+            Name "DX 7.1"
+            From "DirectX Early Version"
+            Vital TRUE
+            Category "System"
+            Description "Transform, clipping, and lighting (T&L)"
+            Unlock 2000
+            DevTime 4
+            Innovation 10
+            Usability 8
+            Stability 2
+            CodeArt 1
+        }
+        {
+            Name "DX 8.1"
+            From "DX 7.1"
+            Vital TRUE
+            Category "System"
+            Description "Pixel & Vertex Shaders, Fog, Bump Mapping, etc."
+            Unlock 2001
+            DevTime 6
+            Innovation 15
+            Usability 10
+            Stability 3
+            CodeArt 1
+        }
+        {
+            Name "DX 9.0c"
+            From "DX 8.1"
+            Vital TRUE
+            Category "System"
+            Description "Shader Model 3.0, Multiple Render Targets, etc."
+            Unlock 2004
+            DevTime 8
+            Innovation 22
+            Usability 16
+            Stability 6
+            CodeArt 0.95
+        }
+        {
+            Name "DX 10"
+            From "DX 9.0c"
+            Vital TRUE
+            Category "System"
+            Description "Shader Model 4.0, Geometry shaders, etc."
+            Unlock 2006
+            DevTime 10
+            Innovation 28
+            Usability 20
+            Stability 9
+            CodeArt 0.95
+        }
+        {
+            Name "DX 11"
+            From "DX 10"
+            Vital TRUE
+            Category "System"
+            Description "Shader Model 5.0, Tessellation, Multithreaded rendering, Compute shaders, etc."
+            Unlock 2009
+            DevTime 12
+            Innovation 33
+            Usability 28
+            Stability 12
+            CodeArt 0.95
+        }
+        {
+            Name "DX 12"
+            From "DX 11"
+            Vital TRUE
+            Category "System"
+            Description "Shader Model 5.1, Low-level API, UAV, ROV, Async Shaders, etc."
+            Unlock 2015
+            DevTime 24
+            Innovation 45
+            Usability 37
+            Stability 20
+            CodeArt 0.9
+        }
+        {
+            Name "OpenGL 1.2"
+            Vital TRUE
+            Category "System"
+            Description "Imaging Subset, Three-dimensional texturing, etc."
+            Unlock 1998
+            DevTime 1
+            Innovation 3
+            Usability 5
+            Stability 1
+            CodeArt 1
+            Dependency { Software "Graphics Card" Feature "API's Support" }
+        }
+        {
+            Name "OpenGL 1.3"
+            From "OpenGL 1.2"
+            Vital TRUE
+            Category "System"
+            Description "Cube-mapped texturing, MSAA Framework, etc."
+            Unlock 2001
+            DevTime 4
+            Innovation 10
+            Usability 8
+            Stability 2
+            CodeArt 1
+        }
+        {
+            Name "OpenGL 1.5"
+            From "OpenGL 1.3"
+            Vital TRUE
+            Category "System"
+            Description "GLSL extension, Depth Texture, Stencil Wrap, etc."
+            Unlock 2003
+            DevTime 6
+            Innovation 15
+            Usability 10
+            Stability 3
+            CodeArt 1
+        }
+        {
+            Name "OpenGL 2.1"
+            From "OpenGL 1.5"
+            Vital TRUE
+            Category "System"
+            Description "GLSL integrated"
+            Unlock 2006
+            DevTime 8
+            Innovation 22
+            Usability 16
+            Stability 6
+            CodeArt 0.95
+        }
+        {
+            Name "OpenGL 3.3"
+            From "OpenGL 2.1"
+            Vital TRUE
+            Category "System"
+            Description "Target DX10 Hardware, Geometry shaders, etc."
+            Unlock 2010
+            DevTime 10
+            Innovation 28
+            Usability 20
+            Stability 9
+            CodeArt 0.95
+        }
+        {
+            Name "OpenGL 4.5"
+            From "OpenGL 3.3"
+            Vital TRUE
+            Category "System"
+            Description "Target DX11 Hardware, Compute shaders, etc."
+            Unlock 2014
+            DevTime 12
+            Innovation 33
+            Usability 28
+            Stability 12
+            CodeArt 0.95
+        }
+        {
+            Name "Vulkan"
+            From "OpenGL 4.5"
+            Vital TRUE
+            Category "System"
+            Description "Low-level API, UAV, ROV, Async Shaders, etc."
+            Unlock 2015
+            DevTime 24
+            Innovation 45
+            Usability 37
+            Stability 20
+            CodeArt 0.9
+        }
+        {
+            Name "Display Connectors"
+            Forced TRUE
+            Vital TRUE
+            Category "Physical"
+            Description ""
+            Unlock 1992
+            DevTime 0.5
+            Innovation 0
+            Usability 1
+            Stability 0
+            CodeArt 0.9
+        }
+        {
+            Name "VGA"
+            Vital TRUE
+            Category "Physical"
+            Description ""
+            Unlock 1992
+            DevTime 1
+            Innovation 0
+            Usability 4
+            Stability 4
+            CodeArt 0.9
+            Dependency { Software "Graphics Card" Feature "Display Connectors" }
+        }
+        {
+            Name "DVI"
+            Vital TRUE
+            Category "Physical"
+            Description ""
+            Unlock 1999
+            DevTime 2
+            Innovation 2
+            Usability 6
+            Stability 6
+            CodeArt 0.85
+            Dependency { Software "Graphics Card" Feature "VGA" }
+        }
+        {
+            Name "HDMI"
+            Vital TRUE
+            Category "Physical"
+            Description ""
+            Unlock 2002
+            DevTime 2
+            Innovation 3
+            Usability 5
+            Stability 5
+            CodeArt 0.9
+            Dependency { Software "Graphics Card" Feature "DVI" }
+        }
+        {
+            Name "DisplayPort"
+            Vital TRUE
+            Category "Physical"
+            Description ""
+            Unlock 2006
+            DevTime 3
+            Innovation 5
+            Usability 7
+            Stability 7
+            CodeArt 0.95
+            Dependency { Software "Graphics Card" Feature "HDMI" }
+        }
+        {
+            Name "Adaptive Sync"
+            From "DisplayPort"
+            Vital FALSE
+            Category "System"
+            Description "You can't have 60fps rock solid? No problem, Adaptive Sync is here!"
+            Unlock 2012
+            DevTime 3
+            Innovation 30
+            Usability 30
+            Stability 10
+            CodeArt 1
+        }
+        {
+            Name "HDR Support"
+            From "DisplayPort"
+            Vital TRUE
+            Category "System"
+            Description "We need more than pixels, we need BETTER pixels (c) AMD"
+            Unlock 2016
+            DevTime 80
+            Innovation 60
+            Usability 80
+            Stability 50
+            CodeArt 0.5
+        }
+    ]
+}

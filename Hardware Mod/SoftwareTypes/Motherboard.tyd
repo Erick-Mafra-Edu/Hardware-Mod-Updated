@@ -1,0 +1,653 @@
+SoftwareType
+{
+    Name "Motherboard"
+    Category "Hardware"
+    Description "A circuitboard which you plug other components in to."
+    Random 0
+    OSSpecific FALSE
+    OneClient FALSE
+    InHouse TRUE
+    NameGenerator "names"
+
+    Categories
+    [
+        {
+            Name "Consumer"
+            Description "Geared towards individuals, these less powerful computers are easier to make; but consumers replace them fairly often."
+            Unlock 0
+            Popularity 1
+            TimeScale 0.75
+            Retention 0.65
+            Iterative 0.5
+            NameGenerator "names"
+        }
+        {
+            Name "Server"
+            Description "Geared towards businesses, these more powerful computers are harder to make and must be stable; but businesses don't upgrade often."
+            Unlock 0
+            Popularity 0.2
+            TimeScale 1.4
+            Retention 0.9
+            Iterative 0.3
+            NameGenerator "names"
+        }
+    ]
+    Features
+    [
+        {
+            Name "Remote Input"
+            Vital TRUE
+            Category "Physical"
+            Description "Allows you to remotely press certain keys, often useful to stop a server from rebooting."
+            Unlock 0
+            DevTime 3
+            Innovation 3
+            Usability 3
+            Stability 3
+            CodeArt 0.9
+            SoftwareCategory { Server 1980 }
+            Dependency { Software "Motherboard" Feature "Remote Power" }
+        }
+        {
+            Name "Remote Video"
+            Vital TRUE
+            Category "Physical"
+            Description "Allows you to actually see what's on the screen, and interact with the server remotely."
+            Unlock 0
+            DevTime 6
+            Innovation 3
+            Usability 3
+            Stability 3
+            CodeArt 0.9
+            SoftwareCategory { Server 1994 }
+            Dependency { Software "Motherboard" Feature "Remote Input" }
+        }
+        {
+            Name "Remote Audio"
+            Vital FALSE
+            Category "Physical"
+            Description "Allows you hear what's going on the server, such as music or local input devices."
+            Unlock 0
+            DevTime 9
+            Innovation 9
+            Usability 3
+            Stability 3
+            CodeArt 0.9
+            SoftwareCategory { Server 1998 }
+            Dependency { Software "Motherboard" Feature "Remote Video" }
+        }
+        {
+            Name "Battery"
+            Vital TRUE
+            Category "Physical"
+            Description "Exists to keep the system time, configuration, and allow for logging systems to flush when the system loses power."
+            Unlock 0
+            DevTime 1
+            Innovation 1
+            Usability 1
+            Stability 2
+            CodeArt 0.9
+        }
+        {
+            Name "BIOS"
+            Vital TRUE
+            Category "System"
+            Description "Allows for configuration management, log viewing, and tweaking of the computer system."
+            Unlock 0
+            DevTime 3
+            Innovation 2
+            Usability 2
+            Stability 1
+            CodeArt 0.1
+            Dependency { Software "Motherboard" Feature "Battery" }
+        }
+        {
+            Name "UEFI"
+            Category "System"
+            Description "The BIOS just wasn't good enough ..."
+            Unlock 2005
+            DevTime 6
+            Innovation 5
+            Usability 2
+            Stability 0
+            CodeArt 0.1
+            Dependency { Software "Motherboard" Feature "BIOS" }
+        }
+        {
+            Name "CPU Socket"
+            Forced TRUE
+            Category "Physical"
+            Description "Somewhere to shove that fine thinkin' brain of yours."
+            Unlock 0
+            DevTime 9
+            Innovation 1
+            Usability 1
+            Stability 1
+            CodeArt 0.2
+        }
+        {
+            Name "Dual Socket"
+            From "CPU Socket"
+            Category "Physical"
+            Description "TWICE THE PROCESSORS"
+            Unlock 1989
+            DevTime 9
+            Innovation 4
+            Usability 4
+            Stability 3
+            CodeArt 0.5
+        }
+        {
+            Name "Quad Socket"
+            From "Dual Socket"
+            Category "Physical"
+            Description "FOUR THE PROCESSORS"
+            Unlock 1999
+            DevTime 15
+            Innovation 10
+            Usability 10
+            Stability 7
+            CodeArt 0.5
+        }
+        {
+            Name "Daughter Board support"
+            Category "Physical"
+            Description "Adds support for Daughter Boards, which can be added to the Computer to increase processing power."
+            Unlock 2002
+            DevTime 21
+            Innovation 10
+            Usability 10
+            Stability 10
+            CodeArt 0.4
+            Dependency { Software "Motherboard" Feature "Quad Socket" }
+        }
+        {
+            Name "Overclocking"
+            Category "System"
+            Description "Adding features to the BIOS/UEFI that let the user control the speed of their Processor, which also creates more heat and is unstable."
+            Unlock 1983
+            DevTime 9
+            Innovation 4
+            Usability 4
+            Stability -4
+            CodeArt 0.9
+            Dependency { Software "Motherboard" Feature "CPU Socket" }
+        }
+        {
+            Name "Water Cooling"
+            Category "Physical"
+            Description "Helps stabilize overclocking"
+            Unlock 1992
+            DevTime 10
+            Innovation 4
+            Usability 0
+            Stability 8
+            CodeArt 0.9
+            Dependency { Software "Motherboard" Feature "Overclocking" }
+        }
+        {
+            Name "Nitrogen Cooling"
+            From "Water Cooling"
+            Category "Physical"
+            Description "Try not to freeze yourself"
+            Unlock 2016
+            DevTime 24
+            Innovation 8
+            Usability 0
+            Stability 16
+            CodeArt 0.8
+        }
+        {
+            Name "Subzero Cooling"
+            From "Nitrogen Cooling"
+            Category "Physical"
+            Description "Insert movie reference here"
+            Unlock 2024
+            DevTime 48
+            Innovation 16
+            Usability 0
+            Stability 32
+            CodeArt 0.2
+        }
+         {
+        Name "14k Modem"
+        Vital TRUE
+        Category "Network"
+        Description "THIS MAKES YOU THEIR ISP, WATCH YOUR BANDWIDTH"
+        Unlock 1990
+        DevTime 24
+        Innovation 4
+        Usability 2
+        Stability 2
+        CodeArt 1
+        Server 0.0006
+    }
+    {
+        Name "56k Modem"
+        From "14k Modem"
+        Vital TRUE
+        Category "Network"
+        Description "Upgrade everyone's modems to 56k"
+        Unlock 1994
+        DevTime 20
+        Innovation 4
+        Usability 4
+        Stability 4
+        CodeArt 1
+        Server 0.003
+    }
+    {
+        Name "Broadband"
+        From "56k Modem"
+        Category "Network"
+        Description "Upgrade everyone's modems to Broadband"
+        Unlock 1998
+        DevTime 20
+        Innovation 8
+        Usability 8
+        Stability 4
+        CodeArt 1
+        Server 0.012
+    }
+     {
+        Name "Dual NIC"
+        Vital FALSE
+        Category "Network"
+        Description "Two network interfaces configured in a mode called 'bonding' which allows them to handle packets for each other. Considered to be more stable than having only one."
+        Unlock 2000
+        DevTime 36
+        Innovation 8
+        Usability 8
+        Stability 16
+        CodeArt 1
+        Server 0.01
+        Dependency { Software "Motherboard" Feature "Broadband" }
+    }
+    {
+        Name "Cable"
+        From "Broadband"
+        Vital TRUE
+        Category "Network"
+        Description "Upgrade everyone's modems to Cable"
+        Unlock 2006
+        DevTime 24
+        Innovation 16
+        Usability 16
+        Stability 8
+        CodeArt 1
+        Server 0.024
+    }
+      {
+        Name "Fiber"
+        From "Cable"
+        Vital TRUE
+        Category "Network"
+        Description "FASTER THAN LIGHT: FTL"
+        Unlock 2010
+        DevTime 36
+        Innovation 32
+        Usability 32
+        Stability 16
+        CodeArt 1
+        Server 0.05
+    }
+    {
+        Name "RAM Slots (DRAM)"
+        Forced TRUE
+        Category "Physical"
+        Description "Somewhere to shove the memory. (coming soon)"
+        Unlock 0
+        DevTime 9
+        Innovation 1
+        Usability 1
+        Stability 1
+        CodeArt 0.8
+    }
+    {
+        Name "SDRAM"
+        From "RAM Slots (DRAM)"
+        Vital TRUE
+        Category "Physical"
+        Description "Synchronous dynamic random-access memory."
+        Unlock 1993
+        DevTime 8
+        Innovation 3
+        Usability 2
+        Stability 1
+        CodeArt 0.9
+    }
+    {
+        Name "DDR"
+        From "SDRAM"
+        Vital TRUE
+        Category "Physical"
+        Description "Waaaaay faster!"
+        Unlock 1996
+        DevTime 7
+        Innovation 5
+        Usability 3
+        Stability 1
+        CodeArt 0.8
+    }
+      {
+        Name "DDR2"
+        From "DDR"
+        Vital TRUE
+        Category "Physical"
+        Description "Waaaaaaaaay faster!"
+        Unlock 2003
+        DevTime 5
+        Innovation 4
+        Usability 4
+        Stability 1
+        CodeArt 0.7
+    }
+    {
+        Name "DDR3"
+        From "DDR2"
+        Vital TRUE
+        Category "Physical"
+        Description "Waaaaaaaaaaaaaaay faster!"
+        Unlock 2007
+        DevTime 9
+        Innovation 8
+        Usability 8
+        Stability 1
+        CodeArt 0.7
+    }
+     {
+        Name "DDR4"
+        From "DDR3"
+        Vital FALSE
+        Category "Physical"
+        Description "Waaaaaaaaaaaaaaaaaaaaaay faster!"
+        Unlock 2014
+        DevTime 12
+        Innovation 8
+        Usability 16
+        Stability 4
+        CodeArt 0.7
+    }
+    {
+        Name "DDR5"
+        From "DDR4"
+        Vital FALSE
+        Category "Physical"
+        Description ""
+        Unlock 2021
+        DevTime 24
+        Innovation 12
+        Usability 16
+        Stability 8
+        CodeArt 0.1
+    }
+     {
+        Name "PCI Slots"
+        Vital TRUE
+        Category "Physical"
+        Description "Slots that let users install additional hardware, currently only Graphics Cards require PCI."
+        Unlock 1992
+        DevTime 4
+        Innovation 4
+        Usability 8
+        Stability 2
+        CodeArt 0.6
+    }
+      {
+        Name "AGP"
+        Vital TRUE
+        Category "Physical"
+        Description "A bus dedicated to graphics adapters."
+        Unlock 1997
+        DevTime 3
+        Innovation 6
+        Usability 12
+        Stability 2
+        CodeArt 0.6
+    }
+    {
+        Name "AGP x8"
+        From "AGP"
+        Vital TRUE
+        Category "Physical"
+        Description "A bus dedicated to graphics adapters x8."
+        Unlock 2002
+        DevTime 4
+        Innovation 6
+        Usability 12
+        Stability 3
+        CodeArt 0.7
+    }
+     {
+        Name "PCI Express"
+        Vital TRUE
+        Category "Physical"
+        Description "A much faster version of PCI, must match the Graphics Cards being used."
+        Unlock 2004
+        DevTime 5
+        Innovation 12
+        Usability 16
+        Stability 4
+        CodeArt 0.5
+        Dependency { Software "Motherboard" Feature "PCI Slots" }
+    }
+      {
+        Name "SLl Support"
+        From "PCI Express"
+        Vital TRUE
+        Category "2D"
+        Description "Allows for the use of two graphics cards."
+        Unlock 2004
+        DevTime 8
+        Innovation 20
+        Usability 8
+        Stability 0
+        CodeArt 0.5
+        Dependency { Software "Motherboard" Feature "PCI Express" }
+    }
+    {
+        Name "Triple SLl"
+        From "SLl Support"
+        Vital FALSE
+        Category "3D"
+        Description "Now you can fit three graphics cards."
+        Unlock 2006
+        DevTime 8
+        Innovation 18
+        Usability 12
+        Stability 0
+        CodeArt 0.5
+        Dependency { Software "Motherboard" Feature "PCI Express" }
+    }
+    {
+        Name "Quad SLl"
+        From "Triple SLl"
+        Vital FALSE
+        Category "3D"
+        Description "FOUR THE GRPAHIC!S"
+        Unlock 2009
+        DevTime 24
+        Innovation 16
+        Usability 20
+        Stability 0
+        CodeArt 0.5
+        Dependency { Software "Motherboard" Feature "PCI Express" }
+    }
+    {
+        Name "PS/2"
+        Vital TRUE
+        Category "Physical"
+        Description "Allows you to plug in peripherals such as a Keyboard or Mouse."
+        Unlock 1987
+        DevTime 3
+        Innovation 2
+        Usability 4
+        Stability 3
+        CodeArt 0.6
+    }
+    {
+        Name "Fan Control"
+        Vital TRUE
+        Category "Physical"
+        Description "The system can use fans to cool down."
+        Unlock 0
+        DevTime 6
+        Innovation 1
+        Usability 2
+        Stability 6
+        CodeArt 0.5
+    }
+    {
+        Name "Connectors"
+        Vital TRUE
+        Category "Physical"
+        Description ""
+        Unlock 0
+        DevTime 3
+        Innovation 1
+        Usability 1
+        Stability 1
+        CodeArt 1
+    }
+     {
+        Name "PC Speaker"
+        Vital TRUE
+        Category "Audio"
+        Description "Certain beeps help for debugging."
+        Unlock 0
+        DevTime 2
+        Innovation 1
+        Usability 2
+        Stability 3
+        CodeArt 0.8
+        Dependency { Software "Motherboard" Feature "Connectors" }
+    }
+     {
+        Name "5.1 Audio"
+        Category "Audio"
+        Description "More realistic sound positioning."
+        Unlock 1983
+        DevTime 6
+        Innovation 3
+        Usability 3
+        Stability 3
+        CodeArt 0.8
+        Dependency { Software "Motherboard" Feature "PC Speaker" }
+    }
+    {
+        Name "7.1 Audio"
+        From "5.1 Audio"
+        Category "Audio"
+        Description "Even More realistic sound positioning."
+        Unlock 1988
+        DevTime 8
+        Innovation 6
+        Usability 12
+        Stability 2
+        CodeArt 0.9
+        Dependency { Software "Motherboard" Feature "PC Speaker" }
+    }
+     {
+        Name "4D Audio"
+        From "7.1 Audio"
+        Category "Audio"
+        Description "It's almost as if you were there"
+        Unlock 2007
+        DevTime 18
+        Innovation 15
+        Usability 20
+        Stability 6
+        CodeArt 0.1
+        Dependency { Software "Motherboard" Feature "PC Speaker" }
+    }
+    {
+        Name "Universal Bus"
+        From "Connectors"
+        Vital TRUE
+        Category "Physical"
+        Description "That thing you always plug into your PC the wrong side... USB"
+        Unlock 1996
+        DevTime 6
+        Innovation 4
+        Usability 4
+        Stability 1
+        CodeArt 0.5
+        Dependency { Software "Motherboard" Feature "Connectors" }
+    }
+    {
+        Name "Universal Bus 2"
+        From "Universal Bus"
+        Vital TRUE
+        Category "System"
+        Description "Now with faster data transfer, figuring out which side are you going to plug it in in the dark is still terrible"
+        Unlock 2000
+        DevTime 9
+        Innovation 3
+        Usability 7
+        Stability 3
+        CodeArt 0.5
+    }
+    {
+        Name "Universal Bus 3"
+        From "Universal Bus 2"
+        Vital TRUE
+        Category "System"
+        Description "Woooo, a bit faster USB colored in blue!"
+        Unlock 2008
+        DevTime 10
+        Innovation 7
+        Usability 7
+        Stability 3
+        CodeArt 0.3
+    }
+    {
+        Name "Thunderclap"
+        Category "Physical"
+        Description ""
+        Unlock 2011
+        DevTime 18
+        Innovation 12
+        Usability 12
+        Stability 6
+        CodeArt 0.2
+        Dependency { Software "Motherboard" Feature "Universal Bus 3" }
+    }
+    {
+        Name "Universal Bus 3.1"
+        From "Universal Bus 3"
+        Category "System"
+        Description ""
+        Unlock 2013
+        DevTime 12
+        Innovation 8
+        Usability 12
+        Stability 6
+        CodeArt 0.8
+    }
+    {
+        Name "Indicators"
+        Vital TRUE
+        Category "Physical"
+        Description ""
+        Unlock 1970
+        DevTime 2
+        Innovation 1
+        Usability 1
+        Stability 2
+        CodeArt 0.9
+        Dependency { Software "Motherboard" Feature "Connectors" }
+    }
+    {
+        Name "RGB Lights"
+        Category "Physical"
+        Description "Ooooooh Flashy"
+        Unlock 1990
+        DevTime 4
+        Innovation 1
+        Usability 3
+        Stability 1
+        CodeArt 0.1
+        Dependency { Software "Motherboard" Feature "Indicators" }
+    }
+    ]
+}

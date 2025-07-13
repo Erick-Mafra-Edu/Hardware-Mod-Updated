@@ -1,0 +1,366 @@
+SoftwareType
+{
+    Name "Memory"
+    Category "Hardware"
+    Description ""
+    Unlock 0
+    Random 0.3
+    Popularity 1
+    OSSpecific FALSE
+    OneClient FALSE
+    InHouse TRUE
+    NameGenerator "names"
+
+    Categories
+    [
+        {
+            Name "Default"
+            Description ""
+            Unlock 0
+            Popularity 0.8
+            TimeScale 0.9
+            Retention 0.65
+            Iterative 0.7
+            NameGenerator "names"
+        }
+    ]
+    Features
+    [
+        {
+            Name "DRAM"
+            Forced TRUE
+            Category "Physical"
+            Description "DRAM is widely used in digital electronics where low-cost and high-capacity memory is required."
+            Unlock 0
+            DevTime 5
+            Innovation 8
+            Usability 6
+            Stability 4
+            CodeArt 1
+        }
+        {
+            Name "SDRAM"
+            From "DRAM"
+            Vital TRUE
+            Category "Physical"
+            Description "Synchronous dynamic random-access memory."
+            Unlock 1993
+            DevTime 6
+            Innovation 10
+            Usability 8
+            Stability 8
+            CodeArt 1
+        }
+        {
+            Name "DDR"
+            From "SDRAM"
+            Vital TRUE
+            Category "Physical"
+            Description "DDR is a class of memory integrated circuits used in computers."
+            Unlock 1996
+            DevTime 6
+            Innovation 15
+            Usability 10
+            Stability 10
+            CodeArt 1
+        }
+        {
+            Name "DDR2"
+            From "DDR"
+            Vital TRUE
+            Category "Physical"
+            Description "More speed with lower voltage"
+            Unlock 2003
+            DevTime 14
+            Innovation 25
+            Usability 15
+            Stability 15
+            CodeArt 0.9
+        }
+        {
+            Name "DDR3"
+            From "DDR2"
+            Vital TRUE
+            Category "Physical"
+            Description "More speed with lower voltage x2"
+            Unlock 2007
+            DevTime 18
+            Innovation 35
+            Usability 25
+            Stability 25
+            CodeArt 0.9
+        }
+        {
+            Name "DDR3L (Low Voltage)"
+            From "DDR3"
+            Vital FALSE
+            Category "Physical"
+            Description "Less voltage!"
+            Unlock 2010
+            DevTime 12
+            Innovation 20
+            Usability 8
+            Stability 5
+            CodeArt 1
+        }
+        {
+            Name "DDR4"
+            From "DDR3"
+            Vital TRUE
+            Category "Physical"
+            Description "More speed with lower voltage x3"
+            Unlock 2014
+            DevTime 24
+            Innovation 60
+            Usability 40
+            Stability 40
+            CodeArt 0.9
+        }
+        {
+            Name "DDR5"
+            From "DDR4"
+            Vital TRUE
+            Category "Physical"
+            Description "More speed with lower voltage x4"
+            Unlock 2018
+            DevTime 30
+            Innovation 70
+            Usability 60
+            Stability 50
+            CodeArt 0.9
+        }
+        {
+            Name "Single Channel"
+            Forced TRUE
+            Category "Physical"
+            Description ""
+            Unlock 0
+            DevTime 0.5
+            Innovation 0
+            Usability 0
+            Stability 5
+            CodeArt 1
+        }
+        {
+            Name "Dual Channel Kit"
+            From "Single Channel"
+            Vital TRUE
+            Category "Physical"
+            Description ""
+            Unlock 2004
+            DevTime 4
+            Innovation 15
+            Usability 8
+            Stability 5
+            CodeArt 0.9
+        }
+        {
+            Name "Triple Channel Kit"
+            From "Dual Channel Kit"
+            Vital FALSE
+            Category "Physical"
+            Description ""
+            Unlock 2008
+            DevTime 8
+            Innovation 25
+            Usability 15
+            Stability 5
+            CodeArt 0.9
+        }
+        {
+            Name "Quad Channel Kit"
+            From "Triple Channel Kit"
+            Vital FALSE
+            Category "Physical"
+            Description ""
+            Unlock 2010
+            DevTime 10
+            Innovation 30
+            Usability 20
+            Stability 10
+            CodeArt 0.8
+        }
+        {
+            Name "SPD"
+            Forced FALSE
+            Vital TRUE
+            Category "System"
+            Description "Memory Profiles"
+            Unlock 1993
+            DevTime 2
+            Innovation 5
+            Usability 5
+            Stability 0
+            CodeArt 1
+        }
+        {
+            Name "EPP"
+            From "DDR2"
+            Vital FALSE
+            Category "System"
+            Description "Enhanced Performance Profiles for enthusiasts."
+            Unlock 2006
+            DevTime 2
+            Innovation 5
+            Usability 5
+            Stability 0
+            CodeArt 1
+            Dependency { Software "Memory" Feature "SPD" }
+        }
+        {
+            Name "EPP 2.0"
+            From "DDR3"
+            Vital FALSE
+            Category "System"
+            Description "Changelog: Support DDR3"
+            Unlock 2008
+            DevTime 6
+            Innovation 10
+            Usability 15
+            Stability 0
+            CodeArt 1
+            Dependency { Software "Memory" Feature "SPD" }
+        }
+        {
+            Name "XMP"
+            From "DDR3"
+            Forced FALSE
+            Vital TRUE
+            Category "System"
+            Description "XMP allows you to overclock RAM to perform beyond standard specifications"
+            Unlock 2011
+            DevTime 8
+            Innovation 15
+            Usability 20
+            Stability 5
+            CodeArt 0.9
+            Dependency { Software "Memory" Feature "SPD" }
+        }
+        {
+            Name "XMP 2.0"
+            From "DDR4"
+            Forced FALSE
+            Vital TRUE
+            Category "System"
+            Description "Changelog: Support DDR4"
+            Unlock 2014
+            DevTime 8
+            Innovation 15
+            Usability 20
+            Stability 8
+            CodeArt 0.9
+            Dependency { Software "Memory" Feature "SPD" }
+        }
+        {
+            Name "XMP 3.0"
+            From "DDR5"
+            Forced FALSE
+            Vital TRUE
+            Category "System"
+            Description "Changelog: Support DDR5"
+            Unlock 2019
+            DevTime 10
+            Innovation 20
+            Usability 25
+            Stability 10
+            CodeArt 0.8
+            Dependency { Software "Memory" Feature "SPD" }
+        }
+        {
+            Name "SIMM"
+            Forced FALSE
+            Vital TRUE
+            Category "Physical"
+            Description "Single In-line Memory Module"
+            Unlock 1983
+            DevTime 4
+            Innovation 0
+            Usability 5
+            Stability 5
+            CodeArt 0.9
+        }
+        {
+            Name "DIMM 100-pin"
+            From "SIMM"
+            Forced FALSE
+            Vital TRUE
+            Category "Physical"
+            Description "DIMM for SDRAM"
+            Unlock 1993
+            DevTime 4
+            Innovation 0
+            Usability 6
+            Stability 6
+            CodeArt 0.9
+        }
+        {
+            Name "DIMM 184-pin"
+            From "DIMM 100-pin"
+            Forced FALSE
+            Vital TRUE
+            Category "Physical"
+            Description "DIMM for DDR"
+            Unlock 1996
+            DevTime 4
+            Innovation 0
+            Usability 6
+            Stability 6
+            CodeArt 0.9
+        }
+        {
+            Name "DIMM 240-pin"
+            From "DIMM 184-pin"
+            Forced FALSE
+            Vital TRUE
+            Category "Physical"
+            Description "DIMM for DDR2 & DDR3"
+            Unlock 2003
+            DevTime 3
+            Innovation 2
+            Usability 8
+            Stability 8
+            CodeArt 0.8
+        }
+        {
+            Name "DIMM 288-pin"
+            From "DIMM 240-pin"
+            Forced FALSE
+            Vital TRUE
+            Category "Physical"
+            Description "DIMM for DDR4 & DDR5"
+            Unlock 2014
+            DevTime 5
+            Innovation 3
+            Usability 9
+            Stability 9
+            CodeArt 0.7
+        }
+        {
+            Name "Heatsink"
+            Forced FALSE
+            Vital FALSE
+            Category "Physical"
+            Description "Giant block of copper"
+            Unlock 1996
+            DevTime 3
+            Innovation 0
+            Usability 0
+            Stability 20
+            CodeArt 0.8
+        }
+        {
+            Name "Heatpipes"
+            From "Heatsink"
+            Forced FALSE
+            Vital FALSE
+            Category "Physical"
+            Description "A more intricated block of copper"
+            Unlock 2003
+            DevTime 9
+            Innovation 20
+            Usability 0
+            Stability 20
+            CodeArt 0.7
+        }
+    ]
+}

@@ -1,0 +1,183 @@
+SoftwareType
+{
+    Name "Capture Card"
+    Category "Hardware"
+    Description ""
+    Unlock 1992
+    Random 0
+    Popularity 0.6
+    OSSpecific FALSE
+    OneClient FALSE
+    InHouse FALSE
+    NameGenerator "names"
+
+    Categories
+    [
+        {
+            Name "Default"
+            Description ""
+            Unlock 1992
+            Popularity 0.5
+            TimeScale 1.0
+            Retention 0.5
+            Iterative 0.7
+            NameGenerator "names"
+        }
+    ]
+    Features
+    [
+        {
+            Name "PCI Interface"
+            Forced TRUE
+            Category "Physical"
+            Description "It plugs into a PCI Slot!"
+            Unlock 1992
+            DevTime 3
+            Innovation 5
+            Usability 10
+            Stability 5
+            CodeArt 1
+            Dependency { Software "Motherboard" Feature "PCI Slots" }
+        }
+        {
+            Name "PCI Express"
+            From "PCI Interface"
+            Vital TRUE
+            Category "Physical"
+            Description "PCI Express is much faster!"
+            Unlock 2004
+            DevTime 6
+            Innovation 20
+            Usability 10
+            Stability 5
+            CodeArt 1
+            Dependency { Software "Motherboard" Feature "PCI Express" }
+        }
+        {
+            Name "SD Resolution"
+            Forced TRUE
+            Category "Physical"
+            Description ""
+            Unlock 0
+            DevTime 3
+            Innovation 5
+            Usability 5
+            Stability 5
+            CodeArt 1
+        }
+        {
+            Name "720p HD"
+            From "SD Resolution"
+            Vital TRUE
+            Category "Physical"
+            Description ""
+            Unlock 2002
+            DevTime 12
+            Innovation 10
+            Usability 10
+            Stability 5
+            CodeArt 1
+        }
+        {
+            Name "1080i HD"
+            Vital TRUE
+            Category "Physical"
+            Description "Consider researching 1080p ..."
+            Unlock 2004
+            DevTime 18
+            Innovation 20
+            Usability 20
+            Stability 10
+            CodeArt 1
+            Dependency { Software "Capture Card" Feature "720p HD" }
+        }
+        {
+            Name "1080p HD"
+            From "1080i HD"
+            Vital TRUE
+            Category "Physical"
+            Description "Because interlaced frames suck."
+            Unlock 2006
+            DevTime 24
+            Innovation 20
+            Usability 20
+            Stability 10
+            CodeArt 1
+        }
+        {
+            Name "2160p HD"
+            From "1080i HD"
+            Vital TRUE
+            Category "Physical"
+            Description "For all of your 4k needs."
+            Unlock 2008
+            DevTime 36
+            Innovation 20
+            Usability 20
+            Stability 10
+            CodeArt 1
+        }
+        {
+            Name "Framerate"
+            Forced TRUE
+            Category "Physical"
+            Description "Only useful for a talking slideshow."
+            Unlock 0
+            DevTime 3
+            Innovation 5
+            Usability 5
+            Stability 5
+            CodeArt 1
+        }
+        {
+            Name "24"
+            Vital TRUE
+            Category "Physical"
+            Description "Gives a cinematic feel."
+            Unlock 2001
+            DevTime 6
+            Innovation 10
+            Usability 10
+            Stability 20
+            CodeArt 1
+            Dependency { Software "Capture Card" Feature "Framerate" }
+        }
+        {
+            Name "50"
+            Category "Physical"
+            Description "I don't really know why this exists."
+            Unlock 2005
+            DevTime 9
+            Innovation 10
+            Usability 20
+            Stability 10
+            CodeArt 1
+            Dependency { Software "Capture Card" Feature "24" }
+        }
+        {
+            Name "30"
+            Vital TRUE
+            Category "Physical"
+            Description "Slightly better for smooth motion."
+            Unlock 2002
+            DevTime 6
+            Innovation 10
+            Usability 15
+            Stability 15
+            CodeArt 1
+            Dependency { Software "Capture Card" Feature "Framerate" }
+        }
+        {
+            Name "60"
+            Category "Physical"
+            Description "A direct upgrade to smooth motion, still backwards compatible wtih 30fps."
+            Unlock 2008
+            DevTime 9
+            Innovation 15
+            Usability 25
+            Stability 15
+            CodeArt 1
+            Dependency { Software "Capture Card" Feature "30" }
+        }
+    ]
+}
